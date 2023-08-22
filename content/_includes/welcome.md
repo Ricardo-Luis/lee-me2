@@ -1,5 +1,8 @@
+---
+layout: "md.jlmd"
+---
 
-# Documentos computacionais sobre Máquinas Elétricas II
+# Documentos computacionais sobre **Máquinas Elétricas II**
 
 Este *website* disponibiliza a leitura e o acesso a uma coleção de *notebooks* na forma de notas de aula e cálculos de engenharia, de apoio à unidade curricular de Máquinas Elétricas II, lecionada no curso de Licenciatura em Engenharia Eletrotécnica do Instituto Superior de Engenharia de Lisboa (ISEL).
 
