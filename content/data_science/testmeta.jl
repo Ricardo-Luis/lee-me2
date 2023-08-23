@@ -6,11 +6,11 @@
 #> video = ""
 #> image = ""
 #> section = 6
-#> order = 
+#> order = 6
 #> title = "Discrete and Continuous META"
 #> layout = "layout.jlhtml"
 #> youtube_id = ""
-#> description = "blablábla"
+#> description = "blablabla"
 #> tags = ["exercise 1", "module2"]
 
 using Markdown
