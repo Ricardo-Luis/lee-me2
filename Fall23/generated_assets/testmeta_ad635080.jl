@@ -4,7 +4,7 @@
 #> [frontmatter]
 #> chapter = 2
 #> video = ""
-#> image = ""
+#> image = "https://github.com/Ricardo-Luis/lee-me2/blob/main/content/assets/zoom_logo.svg"
 #> section = 6
 #> order = 6
 #> title = "Discrete and Continuous META"
