@@ -5,13 +5,13 @@
 #> chapter = 2
 #> video = ""
 #> image = ""
-#> section = 7
-#> order = 6
+#> section = 6
+#> order = 
 #> title = "Discrete and Continuous META"
 #> layout = "layout.jlhtml"
 #> youtube_id = ""
-#> description = ""
-#> tags = ["exercise", "module2"]
+#> description = "blablábla"
+#> tags = ["exercise 1", "module2"]
 
 using Markdown
 using InteractiveUtils
