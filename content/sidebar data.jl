@@ -1,8 +1,8 @@
 Dict(
     :main => [
         "Bem-vindo(a)" => collections["welcome"].pages,
-        "Introdução a documentos computacionais" => collections["preliminaries"].pages,
-        "2: Máquina Elétrica de Corrente Contínua" => collections["module2"].pages,
+        "Documentos computacionais: introdução" => collections["preliminaries"].pages,
+        "1: Máquina Elétrica de Corrente Contínua" => collections["module2"].pages,
         #"Module 3: Climate Science" => collections["module3"].pages,
 
     ],
@@ -15,7 +15,7 @@ Dict(
         :term => "Fall 2023",
         :institution => "ISEL",
         :institution_url => "http://www.isel.pt",
-        :institution_logo => "julia-logo-color.svg",
-        :institution_logo_darkmode => "julia-logo-dark.svg"
+        :institution_logo => "logo_ISEL.png",
+        :institution_logo_darkmode => "logo_ISEL.png"
     )
 )
