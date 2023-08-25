@@ -3,18 +3,19 @@ Dict(
         "welcome" => collections["welcome"].pages,
         "Preliminaries" => collections["preliminaries"].pages,
         "Module 2: Social Science & Data Science" => collections["module2"].pages,
-        "Module 3: Climate Science" => collections["module3"].pages,
+        #"Module 3: Climate Science" => collections["module3"].pages,
 
     ],
     :about => Dict(
         :authors => [
-            (name = "Ricardo Luís", url = "https://www.isel.pt/docentes/ricardo-jorge-ferreira-luis")
+            (name = "Instructor One", url = "https://www.the-one.eu"),
+            (name = "Second Instructor", url = "https://www.the-second.com")
         ],
-        :title => "Máquinas Elétricas II",
-        :subtitle => "reactive notebooks",
-        :term => "Fall 2023",
-        :institution => "ISEL",
-        :institution_url => "https://www.isel.pt/",
+        :title => "A Great Course",
+        :subtitle => "Even Greater Than You Thought",
+        :term => "Spring 2023",
+        :institution => "University of Greatness",
+        :institution_url => "http://www.uva.nl",
         :institution_logo => "julia-logo-color.svg",
         :institution_logo_darkmode => "julia-logo-dark.svg"
     )
