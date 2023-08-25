@@ -1,9 +1,9 @@
 Dict(
     :main => [
-        "Bem-vindo(a)" => collections["welcome"].pages,
-        "Notebook reativo" => collections["preliminaries"].pages,
-        "1: Máquina elétrica de corrente contínua" => collections["module2"].pages,
-        "2: Máquina elétrica síncrona trifásica" => collections["module3"].pages,
+        "welcome" => collections["welcome"].pages,
+        "Preliminaries" => collections["preliminaries"].pages,
+        "Module 2: Social Science & Data Science" => collections["module2"].pages,
+        "Module 3: Climate Science" => collections["module3"].pages,
 
     ],
     :about => Dict(
