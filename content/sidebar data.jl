@@ -8,10 +8,9 @@ Dict(
     ],
     :about => Dict(
         :authors => [
-            (name = "Ricardo Luís", url = "https://www.isel.pt/docentes/ricardo-jorge-ferreira-luis"),
-            (name = "Second Instructor", url = "https://www.the-second.com")
+            (name = "Ricardo Luís", url = "https://www.isel.pt/docentes/ricardo-jorge-ferreira-luis")
         ],
-        :title => "Documentos computacionais sobre Máquinas Elétricas II",
+        :title => "Máquinas Elétricas II",
         :subtitle => "reactive notebooks",
         :term => "Fall 2023",
         :institution => "ISEL",
