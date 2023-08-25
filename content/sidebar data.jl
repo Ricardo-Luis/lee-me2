@@ -8,14 +8,14 @@ Dict(
     ],
     :about => Dict(
         :authors => [
-            (name = "Instructor One", url = "https://www.the-one.eu"),
+            (name = "Ricardo Luis", url = "https://ricardo-luis.github.io/"),
             (name = "Second Instructor", url = "https://www.the-second.com")
         ],
-        :title => "A Great Course",
-        :subtitle => "Even Greater Than You Thought",
+        :title => "Electrical Machines II",
+        :subtitle => "Reactive notebooks",
         :term => "Spring 2023",
-        :institution => "University of Greatness",
-        :institution_url => "http://www.uva.nl",
+        :institution => "ISEL",
+        :institution_url => "http://www.isel.pt",
         :institution_logo => "julia-logo-color.svg",
         :institution_logo_darkmode => "julia-logo-dark.svg"
     )
