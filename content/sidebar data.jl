@@ -1,7 +1,7 @@
 Dict(
     :main => [
-        "welcome" => collections["welcome"].pages,
-        "Intro documentos computacionais" => collections["preliminaries"].pages,
+        "Bem-vindo(a)" => collections["welcome"].pages,
+        "Introdução a documentos computacionais" => collections["preliminaries"].pages,
         "2: Máquina Elétrica de Corrente Contínua" => collections["module2"].pages,
         #"Module 3: Climate Science" => collections["module3"].pages,
 
