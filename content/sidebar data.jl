@@ -16,6 +16,6 @@ Dict(
         :institution => "ISEL",
         :institution_url => "http://www.isel.pt",
         :institution_logo => "logo_ISEL.png",
-        :institution_logo_darkmode => "logo_ISEL.png"
+        :institution_logo_darkmode => "isel_logo_dark.png"
     )
 )
