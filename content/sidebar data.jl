@@ -3,7 +3,7 @@ Dict(
         "Bem-vindo(a)" => collections["welcome"].pages,
         "Documentos computacionais: introdução" => collections["preliminaries"].pages,
         "1: Máquina Elétrica de Corrente Contínua" => collections["module2"].pages,
-        #"Module 3: Climate Science" => collections["module3"].pages,
+        "2: Máquina Elétrica Síncrona Trifásica" => collections["module3"].pages,
 
     ],
     :about => Dict(
