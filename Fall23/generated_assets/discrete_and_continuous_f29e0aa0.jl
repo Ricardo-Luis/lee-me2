@@ -7,7 +7,7 @@
 #> image = "https://user-images.githubusercontent.com/6933510/136196552-ce16c06f-bd12-427f-80e5-aedb1fbc734a.png"
 #> section = 7
 #> order = 7
-#> title = "Discrete and Continuous"
+#> title = "📝 Discrete and Continuous"
 #> layout = "layout.jlhtml"
 #> youtube_id = "H6Dcx3YeTkE"
 #> description = ""
