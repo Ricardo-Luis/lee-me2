@@ -204,6 +204,7 @@ a.pluto_home_link {
 #pages-sidebar .search-bar form {
     display: flex;
     flex-direction: row;
+    margin-block-start: 0.6em;
 }
 #pages-sidebar .search-bar input[type="search"] {
     flex: 1 1 auto;
