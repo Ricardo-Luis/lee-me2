@@ -2,10 +2,10 @@
 # v0.19.14
 
 #> [frontmatter]
-#> chapter = 0
-#> section = 7
+#> chapter = 
+#> section = 
 #> order = 7
-#> title = "Basic Julia"
+#> title = "🎈 Basic Julia"
 #> layout = "layout.jlhtml"
 #> description = ""
 #> tags = ["preliminaries"]
