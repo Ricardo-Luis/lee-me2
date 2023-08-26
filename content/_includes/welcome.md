@@ -45,7 +45,7 @@ As suas [questões](https://github.com/Ricardo-Luis/lee-me2/issues) e/ou [sugest
 
 Agradeço aos amigos e colegas do Grupo Disciplinar de Máquinas Elétricas do ISEL-DEEEA, pelas discussões e ideias para a realização de documentos computacionais, como material de apoio ao ensino da unidade curricular de Máquinas Elétricas II.
 
-The design of this website is based on _**Computational Thinking**, a live online Julia/Pluto textbook: [(computationalthinking.mit.edu)](https://computationalthinking.mit.edu). 
+The design of this website is based on **Computational Thinking**, a live online Julia/Pluto textbook: [computationalthinking.mit.edu](https://computationalthinking.mit.edu). 
 
 These online lectures on Computational Thinking using Pluto notebooks, inspired me to seek out and start developing a notebook collection on electrical machines studies in the electrical engineering course. 
 
