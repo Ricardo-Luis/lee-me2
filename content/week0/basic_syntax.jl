@@ -5,7 +5,7 @@
 #> chapter = 0
 #> section = 1
 #> order = 1
-#> title = "🎈 Basic Julia"
+#> title = " 🎈 Basic Julia"
 #> layout = "layout.jlhtml"
 #> description = ""
 #> tags = ["preliminaries"]
