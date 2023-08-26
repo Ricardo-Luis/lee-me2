@@ -4,7 +4,7 @@
 #> [frontmatter]
 #> chapter = 0
 #> section = 1
-#> order = 
+#> order = 1
 #> title = "🎈 Basic Julia"
 #> layout = "layout.jlhtml"
 #> description = ""
