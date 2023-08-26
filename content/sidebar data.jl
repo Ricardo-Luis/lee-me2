@@ -1,9 +1,9 @@
 Dict(
     :main => [
-        "Bem-vindo(a)" => collections["welcome"].pages,
+        "Bem-vindo" => collections["welcome"].pages,
         "Documentos computacionais: introdução" => collections["preliminaries"].pages,
-        "1: Máquina Elétrica de Corrente Contínua" => collections["module2"].pages,
-        "2: Máquina Elétrica Síncrona Trifásica" => collections["module3"].pages,
+        "Máquina Elétrica de Corrente Contínua" => collections["module2"].pages,
+        "Máquina Elétrica Síncrona Trifásica" => collections["module3"].pages,
 
     ],
     :about => Dict(
