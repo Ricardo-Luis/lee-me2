@@ -108,7 +108,7 @@ window.pluto_preamble_html = undefined;
            
         <div class="pages-markdown">
 <main>
-<h1 id="a-linguagem-de-programação-julia-"><a href="#a-linguagem-de-programação-julia-" class="anchor"></a>A linguagem de programação Julia</h1>
+<h1 id="linguagem-de-programação-julia-"><a href="#linguagem-de-programação-julia-" class="anchor"></a>Linguagem de programação Julia</h1>
 <p><a href="https://en.wikipedia.org/wiki/Julia_(programming_language)">Julia</a> é uma linguagem de programação de <a href="https://en.wikipedia.org/wiki/High-level_programming_language">alto nível</a>, <a href="https://en.wikipedia.org/wiki/Dynamic_programming_language">dinâmica</a> e de elevado desempenho adequada para <a href="https://pt.wikipedia.org/wiki/Computa%C3%A7%C3%A3o_cient%C3%ADfica">computação científica</a>. Apresenta ótimas características para a construção de modelos matemáticos e de técnicas de simulação numérica, permitindo analisar e resolver problemas científicos e de engenharia, através do computador.</p>
 <p>Julia foi lançada em 2012 mantendo-se como uma linguagem de programação gratuita, multi-plataforma e <em>open source</em>.</p>
 <h1 id="plutojl"><a href="#plutojl" class="anchor"></a>Pluto.jl</h1>
@@ -125,29 +125,43 @@ Quando outra pessoa abrir seu <em>notebook</em> com o Pluto, o mesmo ambiente de
 <h1 id="notebooks-de-máquinas-elétricas-ii"><a href="#notebooks-de-máquinas-elétricas-ii" class="anchor"></a><em>Notebooks</em> de Máquinas Elétricas II</h1>
 <p>A escolha do Pluto.jl como ambiente de programação reativo para Julia, para a elaboração de <em>notebooks</em> de apoio a Máquinas Elétricas II, possibilita a implementação de boas práticas de <a href="https://www.ciencia-aberta.pt/">Ciência Aberta</a>. O Julia com o Pluto.jl permitem disponibilizar <a href="https://en.wikipedia.org/wiki/Open_educational_resources">recursos educacionais abertos</a>, através da realização de materiais de ensino-aprendizagem. Também no âmbito da investigação e desenvolvimento, estas ferramentas permitem aplicar os princípios <a href="https://openscience.eu/">FAIR</a>:</p>
 <ul>
-<li><strong>F</strong>indable</li>
-<li><strong>A</strong>ccessible</li>
-<li><strong>I</strong>nteroperable</li>
-<li><strong>R</strong>eusable</li>
+<li><em><strong>F</strong>indable</em></li>
+<li><em><strong>A</strong>ccessible</em></li>
+<li><em><strong>I</strong>nteroperable</em></li>
+<li><em><strong>R</strong>eusable</em></li>
 </ul>
 <p>Assim, os <em>notebooks</em> reativos com Julia/Pluto podem fomentar a transparência, reprodutibilidade, reutilização e inovação em ciência/engenharia.</p>
-<h2 id="time-to-first-plot"><a href="#time-to-first-plot" class="anchor"></a>“Time to first plot”</h2>
-<p>Julia é uma linguagem compilada <em>just-in-time</em> (JIT). Isso significa que o compilador irá gerar código binário conforme necessário. Assim, quando abrir/executar o <em>notebook</em> pela primeira vez, verificará que tem de aguardar algum tempo pela compilação do código Julia, dependendo da complexidade do mesmo e da capacidade de processamento do seu computador. Por exemplo, a biblioteca <code>Plots.jl</code> para realização de gráficos tem uma dimensão considerável e exige tempo de compilação. Esta latência na compilação de um programa Julia é conhecida por <a href="https://lwn.net/Articles/856819/">“time to first plot”_</a>, que teve melhorias significativas nas versões 1.6 e 1.9 do Julia. Após a 1ª execução, apenas as alterações que realize (no código, nos dados, por interação) serão compiladas, pelo que verificará, a partir daí o <a href="https://julialang.org/benchmarks/">elevado desempenho</a> da linguagem Julia.</p>
+<h2 id="time-to-first-plot"><a href="#time-to-first-plot" class="anchor"></a>“<em>Time to first plot</em>”</h2>
+<p>Julia é uma linguagem compilada <em>just-in-time</em> (JIT). Isso significa que o compilador irá gerar código binário conforme necessário. Assim, quando abrir/executar o <em>notebook</em> pela primeira vez, verificará que tem de aguardar algum tempo pela compilação do código Julia, dependendo da complexidade do mesmo e da capacidade de processamento do seu computador. Por exemplo, a biblioteca <code>Plots.jl</code> para realização de gráficos tem uma dimensão considerável e exige tempo de compilação. Esta latência na compilação de um programa Julia é conhecida por <a href="https://lwn.net/Articles/856819/">“time to first plot”</a>, que teve melhorias significativas nas versões 1.6 e 1.9 do Julia. Após a 1ª execução, apenas as alterações que realize (no código, nos dados, por interação) serão compiladas, pelo que verificará, a partir daí o <a href="https://julialang.org/benchmarks/">elevado desempenho</a> da linguagem Julia.</p>
 <p>Assim, como sugestão, após abrir um dos <em>notebooks</em> de Máquinas Elétricas II no seu Julia/Pluto, pode fazer uma primeira leitura desse <em>notebook</em> na versão estática do mesmo, disponibilizada neste <em>website</em>, até a 1ª compilação/execução terminar, para então depois poder utilizá-lo.</p>
 <p>No final de cada <em>notebook</em> é indicado o tempo da 1ª compilação, acompanhado das informações sobre a frequência de processamento do CPU e a capacidade de memória RAM do computador em que foi testado, como referência.</p>
 <h1 id="informação-complementar"><a href="#informação-complementar" class="anchor"></a>Informação complementar</h1>
 <h2 id="sobre-notebooks-pluto"><a href="#sobre-notebooks-pluto" class="anchor"></a>Sobre <em>notebooks</em> Pluto</h2>
 <ul>
-<li>Fons van der Plas, Mikołaj Bochenski, <a href="https://youtu.be/IAF8DjrQSSk">Interactive notebooks Pluto.jl</a>, vídeo de apresentação do Pluto, conferência JuliaCon 2020. Duração: 24min.</li>
-<li>Fons van der Plas, <a href="https://youtu.be/HiI4jgDyDhY">🎈 Pluto.jl — one year later</a>, vídeo da conferência JuliaCon 2021. Duração: 27min.</li>
-<li>Fons van der Plas, <a href="https://www.youtube.com/watch?v=Rg3r3gG4nQo">🎈Pluto.jl – reactive and reproducible notebooks for Julia</a>, vídeo de apresentação do Pluto, conferência JupyterCon 2023. Duração: 29min.</li>
-<li>Connor Burns, <a href="https://medium.com/swlh/a-guide-to-building-reactive-notebooks-for-scientific-computing-with-julia-and-pluto-jl-1a2c0c455d51">A Guide to Building Reactive Notebooks for Scientific Computing With Julia and Pluto.jl</a>, artigo de opinião, Medium, Dez. 2020.</li>
+<li>
+<p>Fons van der Plas, Mikołaj Bochenski, <a href="https://youtu.be/IAF8DjrQSSk">Interactive notebooks Pluto.jl</a>, vídeo de apresentação do Pluto, conferência JuliaCon 2020. Duração: 24min.</p>
+</li>
+<li>
+<p>Fons van der Plas, <a href="https://youtu.be/HiI4jgDyDhY">🎈 Pluto.jl — one year later</a>, vídeo da conferência JuliaCon 2021. Duração: 27min.</p>
+</li>
+<li>
+<p>Fons van der Plas, <a href="https://www.youtube.com/watch?v=Rg3r3gG4nQo">🎈Pluto.jl – reactive and reproducible notebooks for Julia</a>, vídeo de apresentação do Pluto, conferência JupyterCon 2023. Duração: 29min.</p>
+</li>
+<li>
+<p>Connor Burns, <a href="https://medium.com/swlh/a-guide-to-building-reactive-notebooks-for-scientific-computing-with-julia-and-pluto-jl-1a2c0c455d51">A Guide to Building Reactive Notebooks for Scientific Computing With Julia and Pluto.jl</a>, artigo de opinião, Medium, Dez. 2020.</p>
+</li>
 </ul>
 <h2 id="sobre-a-linguagem-de-programação-julia"><a href="#sobre-a-linguagem-de-programação-julia" class="anchor"></a>Sobre a linguagem de programação Julia</h2>
 <ul>
-<li>Jeff Bezanson, Stefan Karpinski, Viral B. Shah, Alan Edelman, <a href="https://julialang.org/blog/2012/02/why-we-created-julia/">Why We Created Julia</a>, Massachusetts Institute of Technology, Fev. 2012.</li>
-<li>Gabriel Gauci Maistre, <a href="https://blog.goodaudience.com/10-reasons-why-you-should-learn-julia-d786ac29c6ca">10 Reasons Why You Should Learn Julia</a>, artigo de opinião, Good Audience, Set. 2018.</li>
-<li>Abel Soares Siqueira, Gustavo Sarturi, João Okimoto, Kally Chung, <a href="https://juliaintro.github.io/JuliaIntroBR.jl/">Introdução à programação em Julia</a>, tradução do livro de: Allen Downey, Ben Lauwens, <a href="https://benlauwens.github.io/ThinkJulia.jl/latest/book.html">Think Julia: How to Think Like a Computer Scientist</a>, O’Reilly Media, 2018.</li>
+<li>
+<p>Jeff Bezanson, Stefan Karpinski, Viral B. Shah, Alan Edelman, <a href="https://julialang.org/blog/2012/02/why-we-created-julia/">Why We Created Julia</a>, Massachusetts Institute of Technology, Fev. 2012.</p>
+</li>
+<li>
+<p>Gabriel Gauci Maistre, <a href="https://blog.goodaudience.com/10-reasons-why-you-should-learn-julia-d786ac29c6ca">10 Reasons Why You Should Learn Julia</a>, artigo de opinião, Good Audience, Set. 2018.</p>
+</li>
+<li>
+<p>Abel Soares Siqueira, Gustavo Sarturi, João Okimoto, Kally Chung, <a href="https://juliaintro.github.io/JuliaIntroBR.jl/">Introdução à programação em Julia</a>, tradução do livro de: Allen Downey, Ben Lauwens, <a href="https://benlauwens.github.io/ThinkJulia.jl/latest/book.html">Think Julia: How to Think Like a Computer Scientist</a>, O’Reilly Media, 2018.</p>
+</li>
 </ul>
 </main>
 </div>
