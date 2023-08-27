@@ -11,7 +11,7 @@ layout: "md.jlmd"
 
 - [`Julia` By Example](https://juliabyexample.helpmanual.io/)
 
-- [MATLAB-`Julia`-Python](https://cheatsheets.quantecon.org/) by [QuantEcon group](https://quantecon.org) comparative cheatsheet
+- [MATLAB-`Julia`-Python](https://cheatsheets.quantecon.org/) comparative cheatsheet by [QuantEcon group](https://quantecon.org) 
 				
 - [MATLAB to `Julia` online converter](https://lakras.github.io/matlab-to-julia/)
 
