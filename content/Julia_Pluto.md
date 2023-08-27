@@ -64,4 +64,6 @@ No final de cada *notebook* é indicado o tempo da 1ª compilação, acompanhado
 
 - Gabriel Gauci Maistre, [10 Reasons Why You Should Learn Julia](https://blog.goodaudience.com/10-reasons-why-you-should-learn-julia-d786ac29c6ca), artigo de opinião, Good Audience, Set. 2018.
 
+- Bekhruz Tuychiev, [The Rise of the Julia Programming Language  — Is it Worth Learning in 2023?](https://www.datacamp.com/blog/the-rise-of-julia-is-it-worth-learning-in-2022), artigo de opinião, DataCamp, Maio 2023.
+
 - Abel Soares Siqueira, Gustavo Sarturi, João Okimoto, Kally Chung, [Introdução à programação em Julia](https://juliaintro.github.io/JuliaIntroBR.jl/), tradução do livro de: Allen Downey, Ben Lauwens, [Think Julia: How to Think Like a Computer Scientist](https://benlauwens.github.io/ThinkJulia.jl/latest/book.html), O’Reilly Media, 2018. 
