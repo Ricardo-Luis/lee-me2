@@ -7,7 +7,7 @@ layout: "md.jlmd"
 
 # Consulta rápida
 
-Elementos de consulta (documentação, exemplos de *notebooks*, bibliotecas Julia e outras ferramentas) úteis em programação em Julia e na realização de *notebooks* Pluto.
+Elementos de consulta (documentação, exemplos de *notebooks*, bibliotecas e outras ferramentas) úteis para programação em Julia e na realização de *notebooks* Pluto.
 
 
 ## Programação Julia
