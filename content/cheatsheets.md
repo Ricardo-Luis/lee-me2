@@ -8,7 +8,7 @@ layout: "md.jlmd"
 # Consulta rápida
 
 Elementos de consulta (documentação, exemplos de *notebooks*, bibliotecas e outras ferramentas) úteis para programação em Julia e na realização de *notebooks* Pluto.
-
+Indicação da notação utilizada no *website* e nos *notebooks*.
 
 ## Programação Julia
 
@@ -73,3 +73,28 @@ Elementos de consulta (documentação, exemplos de *notebooks*, bibliotecas e ou
 - Whiteboard for sketching/hand-draw, [tldraw](https://www.tldraw.com/)
 
 - [🎈 ShortCodes.jl](https://raw.githack.com/hellemo/ShortCodes.jl/main/examples/static-demo.html): Simple embedding for Pluto notebooks
+
+
+
+## Semiografia utilizada no *website*/*notebook(s)*
+
+- 🎈: ligação a *notebook(s)* exemplificativo(s)
+
+- 📚: *notebook* sobre conceitos teóricos
+
+- 🛠️: *notebook* de resolução de um exercício
+
+- 🚩: *notebook* de resolução de um problema de engenharia
+
+- 📈: *notebook* de relatório de ensaio laboratorial
+
+- 📝: *notebook* de resolução de um teste de avaliação 
+
+- 📄: *notebook* de guia de ensaio experimental / preparação de relatório técnico 
+
+- 💻: tópico assinalado no *notebook* que requer a participação do estudante (atividade interativa)
+
+- 📌: tópico assinalado no *notebook* que deve ser analisado previamente
+
+-  Imagem colocada no topo do *notebook* para obter o [URL](https://pt.wikipedia.org/wiki/URL) do ficheiro `*.jl` no repositório de *notebooks* Pluto de ME II: 
+![](https://img.shields.io/badge/GitHub_URL-notebook-C09107)
