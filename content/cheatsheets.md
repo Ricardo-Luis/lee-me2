@@ -52,7 +52,7 @@ Elementos de consulta (documentação, exemplos de *notebooks*, bibliotecas e ou
     
     - [Online equation editor using LaTeX markup](https://editor.codecogs.com)
 
-- dogo dot jl, [How to Use Markdown and LaTeX in Pluto Notebooks](https://www.youtube.com/watch?v=YahByfBTnCc&list=PLhQ2JMBcfAsjeC10lx_2zDlFUMkBUTyyO&index=2), YouTube, Sep. 2022. Duration: 25min.
+- doggo dot jl, [How to Use Markdown and LaTeX in Pluto Notebooks](https://www.youtube.com/watch?v=YahByfBTnCc&list=PLhQ2JMBcfAsjeC10lx_2zDlFUMkBUTyyO&index=2), YouTube, Sep. 2022. Duration: 25min.
 
 
 ### Tabelas
