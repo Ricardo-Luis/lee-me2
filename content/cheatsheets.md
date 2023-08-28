@@ -66,6 +66,8 @@ Elementos de consulta (documentação, exemplos de *notebooks*, bibliotecas Juli
 
 - [Plots.jl](https://github.com/sswatson/cheatsheets/blob/master/plotsjl-cheatsheet.pdf) cheatsheet
 
+- [🎈 Notebooks for the examples in the book](https://packtpublishing.github.io/Interactive-Visualization-and-Plotting-with-Julia/): Diego Javier Zea, Interactive Visualization and Plotting with Julia, Packt Publishing, 2022.  
+
 - Tecnhical drawing, [draw.io](https://app.diagrams.net/)
 
 - Whiteboard for sketching/hand-draw, [tldraw](https://www.tldraw.com/)
