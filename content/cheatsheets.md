@@ -12,6 +12,8 @@ Indicação da notação utilizada no *website* e nos *notebooks*.
 
 ## Programação Julia
 
+- Jeff Delaney, [Julia in 100 Seconds](https://www.youtube.com/watch?v=JYs_94znYy0), Fireship, YouTube, May 2022
+
 - [Fastrack to Julia](https://juliadocs.github.io/Julia-Cheat-Sheet/) cheatsheet
 
 - [Julia By Example](https://juliabyexample.helpmanual.io/)
@@ -36,6 +38,8 @@ Indicação da notação utilizada no *website* e nos *notebooks*.
     - [🎈 PlutoUI sample notebook](https://featured.plutojl.org/basic/plutoui.jl)
     
     - doggo dot jl, [How to Create Engaging Interactive Reactive Notebooks using PlutoUI](https://www.youtube.com/watch?v=nkyvN7PXQZc), YouTube, Oct. 2022. Duration: 24min.
+ 
+    - Abel Siqueira, [Explorando notebooks Pluto.jl - Tutoriais de Julia em Português](https://www.youtube.com/watch?v=ZnF27xxlcD8), YouTube, Maio 2021. Duração: 33min.
 
 
 ### Texto e equações 
