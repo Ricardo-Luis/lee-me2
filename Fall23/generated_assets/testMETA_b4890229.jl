@@ -3,15 +3,15 @@
 
 #> [frontmatter]
 #> chapter = 2
-#> video = ""
-#> image = "https://github.com/Ricardo-Luis/lee-me2/blob/main/content/assets/zoom_logo.svg"
-#> section = 6
-#> order = 6
-#> title = "Discrete and Continuous META"
+#> video = "https://www.youtube.com/watch?v=H6Dcx3YeTkE"
+#> image = "https://user-images.githubusercontent.com/6933510/136196552-ce16c06f-bd12-427f-80e5-aedb1fbc734a.png"
+#> section = 10
+#> order = 10
+#> title = "Discrete and Continuous"
 #> layout = "layout.jlhtml"
-#> youtube_id = ""
-#> description = "blablabla"
-#> tags = ["exercise 1", "module3"]
+#> youtube_id = "H6Dcx3YeTkE"
+#> description = ""
+#> tags = ["lecture", "module3"]
 
 using Markdown
 using InteractiveUtils
@@ -1724,4 +1724,3 @@ version = "1.4.1+0"
 # ╟─c03d45f8-9188-11eb-2e11-0fafa39f253d
 # ╠═43d20d56-d56a-47a8-893e-f726c1a99651
 # ╟─00000000-0000-0000-0000-000000000001
-# ╟─00000000-0000-0000-0000-000000000002
