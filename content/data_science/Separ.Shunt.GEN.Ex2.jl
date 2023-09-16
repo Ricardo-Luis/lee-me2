@@ -3,14 +3,10 @@
 
 #> [frontmatter]
 #> chapter = 1
-#> video = ""
-#> image = "https://github.com/Ricardo-Luis/lee-me2/blob/main/content/assets/zoom_logo.svg"
 #> section = 1
 #> order = 1
 #> title = "🛠️ Gerador: exc. separada vs. shunt"
 #> layout = "layout.jlhtml"
-#> youtube_id = ""
-#> description = ""
 #> tags = ["lecture", "module2"]
 
 using Markdown
@@ -453,7 +449,7 @@ md"""
 """
 
 # ╔═╡ b176721c-6a68-4041-b1a7-cbb7122d4af5
-ThreeColumn(md"Text content: [![](https://i.creativecommons.org/l/by-sa/4.0/80x15.png)](http://creativecommons.org/licenses/by-sa/4.0/)", md" $(Resource(julia_logo, :height => 15)) `code`: [`MIT License`](https://www.tldrlegal.com/l/mit)", md"[$$© \text{ 2022 Ricardo Luís}$$](https://ricardo-luis.github.io/me2/)")
+ThreeColumn(md"Text content: [![](https://i.creativecommons.org/l/by-sa/4.0/80x15.png)](http://creativecommons.org/licenses/by-sa/4.0/)", md"`Julia code`: [`MIT License`](https://www.tldrlegal.com/l/mit)", md"[$$© \text{ 2022 Ricardo Luís}$$](https://ricardo-luis.github.io/me2/)")
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
