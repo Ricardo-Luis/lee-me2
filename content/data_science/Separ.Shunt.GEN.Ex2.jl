@@ -4,6 +4,7 @@
 #> [frontmatter]
 #> chapter = 1
 #> video = ""
+#> youtube_id = ""
 #> section = 1
 #> order = 1
 #> title = "🛠️ Gerador: exc. separada vs. shunt"
