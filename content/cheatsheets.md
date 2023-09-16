@@ -86,9 +86,9 @@ Indicação da notação utilizada no *website* e nos *notebooks*.
 
 - 📚: *notebook* sobre conceitos teóricos
 
-- 🛠️: *notebook* de resolução de um exercício
+- ✏️: *notebook* de resolução de um exercício
 
-- 🚩: *notebook* de resolução de um problema de engenharia
+- 💡: *notebook* de resolução de um problema de engenharia
 
 - 📈: *notebook* de relatório de ensaio laboratorial
 
