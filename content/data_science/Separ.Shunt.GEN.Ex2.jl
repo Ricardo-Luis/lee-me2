@@ -3,12 +3,14 @@
 
 #> [frontmatter]
 #> chapter = 1
+#> video = ""
 #> section = 1
 #> order = 1
 #> title = "🛠️ Gerador: exc. separada vs. shunt"
 #> layout = "layout.jlhtml"
 #> description = "Resolução do exercício 2: gerador de excitação separada vs. gerador shunt"
 #> tags = ["lecture", "module2"]
+
 
 using Markdown
 using InteractiveUtils
