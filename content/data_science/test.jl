@@ -5,8 +5,8 @@
 #> chapter = 1
 #> video = "https://www.youtube.com/watch?v=H6Dcx3YeTkE"
 #> image = "https://user-images.githubusercontent.com/6933510/136196552-ce16c06f-bd12-427f-80e5-aedb1fbc734a.png"
-#> section = 7
-#> order = 7
+#> section = 10
+#> order = 10
 #> title = "Discrete and Continuous"
 #> layout = "layout.jlhtml"
 #> youtube_id = "H6Dcx3YeTkE"
