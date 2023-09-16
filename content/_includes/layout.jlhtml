@@ -162,6 +162,8 @@ $(pluto_head)
         </ul>
         </div>
         </nav>
+<!-- This is a comment -->
+<!--
         <div id="pages-content">
            $(any(contains("lecture"), f("tags", String[])) ? @htl("""
            <div class="lecture-header" >
@@ -169,17 +171,14 @@ $(pluto_head)
                 <h1>$(
                     f("title", basename(page.input.relative_path))
                 )</h1>
-
-<!-- This is a comment -->
-<!--
                 <div class="video">
 
                     <h4>Lecture Video</h4>
                     <div>
                         <lite-youtube videoid=$(f("youtube_id", "notfound")) params="modestbranding=1&rel=0"></lite-youtube>
                     </div>
-                </div> -->
-            </div>
+                </div>
+            </div> -->
             """) : nothing)
         $(content)
         </div>
