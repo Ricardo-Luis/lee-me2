@@ -178,8 +178,8 @@ $(pluto_head)
                         <lite-youtube videoid=$(f("youtube_id", "notfound")) params="modestbranding=1&rel=0"></lite-youtube>
                     </div>
                 </div>
-            </div> -->
-            """) : nothing)
+            </div> 
+            """) : nothing)-->
         $(content)
         </div>
     </div>
