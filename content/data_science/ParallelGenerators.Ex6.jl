@@ -3,11 +3,12 @@
 
 #> [frontmatter]
 #> chapter = 1
-#> section = 1
-#> order = 1
-#> title = "✏️ Gerador: exc. separada vs. shunt"
+#> section = 3
+#> order = 3
+#> title = "✏️ Paralelo de geradores"
 #> layout = "layout.jlhtml"
 #> tags = ["lecture", "module2"]
+
 
 using Markdown
 using InteractiveUtils
@@ -22,17 +23,17 @@ macro bind(def, element)
     end
 end
 
-# ╔═╡ a99eb837-a18d-4a4c-a4d3-756cc2e6b1de
+# ╔═╡ f06ea9e2-b9ed-4f8f-9278-9441cd270ca5
 begin
 	using PlutoUI, PlutoTeachingTools # interface, ferramentas de edição
-	using Plots							# gráficos
-	using Dierckx 						# interpolação de dados
+	using Plots  						# gráficos 
+	using Dierckx  						# interpolação/extrapolação de dados
 end
 
-# ╔═╡ 1f9f4012-1be5-42a4-8d56-949d783e6518
-ThreeColumn(md"`Separ.Shunt.GEN.Ex2.jl`", md"[![](https://img.shields.io/badge/GitHub_URL-notebook-C09107)](https://github.com/Ricardo-Luis/notebooks/blob/main/ME2/Separ.Shunt.GEN.Ex2.jl)", md"`Last update: 11·09·2023`")
+# ╔═╡ a4cc4ad7-04fd-41cf-b6a9-8cdede20b8af
+ThreeColumn(md"`ParallelGenerators.Ex6.jl`", md"[![](https://img.shields.io/badge/GitHub_URL-notebook-C09107)](https://github.com/Ricardo-Luis/notebooks/blob/main/ME2/ParallelGenerators.Ex6.jl)", md"`Last update: 11·09·2023`")
 
-# ╔═╡ 5277a02b-2fd9-49b6-958f-3c6d53d3e433
+# ╔═╡ 7fdb306c-0729-40bb-bfc7-2ce826fe936b
 begin
 	html"""
 	<style>
@@ -47,407 +48,216 @@ begin
 	ChooseDisplayMode()
 end;
 
-# ╔═╡ 9a4e9d24-3fd0-405f-adc3-4afc509629ef
+# ╔═╡ f01a2e6c-801d-4c1e-bc60-ce30c475bdc0
 md"""
 ---
 $\textbf{MÁQUINAS ELÉTRICAS DE CORRENTE CONTÍNUA}$
 
-$\text{EXERCÍCIO 2}$ 
+$\text{EXERCÍCIO 6}$ 
 
-$\textbf{Gerador de excitação separada (ou independente)}$
-$\textbf{e}$
-$\textbf{Gerador de excitação em derivação (ou gerador \textit{shunt})}$
+$\textbf{Associação em paralelo de geradores DC}$
 ---
 """
 
-# ╔═╡ 75ecba91-0134-4ebe-8c7d-683a75b86137
+# ╔═╡ 570473a3-be60-4ff1-b6d7-269c7c3cd321
 md"""
-# Exercício 2. Dados:
+# Exercício 6. Dados:
 """
 
-# ╔═╡ f33dd982-062c-4369-ac89-4b4a6e2d231c
+# ╔═╡ 860e56f2-921c-4943-a31b-3c2a896ca092
 md"""
-**Um gerador de corrente contínua $$[220\rm{V}, 12A, 1500rpm]$$ com excitação independente foi ensaiado em vazio e em carga, à velocidade nominal, tendo-se obtido as seguintes características:**
+**Conhecem-se as características exteriores de dois dínamos de excitação composta
+diferencial, ligados em paralelo, de 220V, 110kW:**
 """
 
-# ╔═╡ 1ea689c9-8cac-4045-b7e7-6ca0cf228b10
-md"""
-Característica magnética: $$E_{0} =f(I_{exc})$$ 
-com   $$n=constante$$
-"""
-
-# ╔═╡ 4354f1c7-0bcd-41d5-b561-94d39882390d
+# ╔═╡ f50f251e-afe1-4ae3-8607-4d325a7c6116
 begin
-	Iexc = [0.0, 0.25, 0.5, 0.75, 1.0, 1.5]
-	E₀_1500 = [20.0, 180.0, 238.0, 270.0, 284.0, 300.0]
-	Iexc, E₀_1500	
+	I = [0.0, 200, 400, 500, 700, 900]
+	U₁ = [229.5, 226.5, 222.5, 220.0, 213.0, 205.5]
+	U₂ = [224.0, 223.0, 221.0, 220.0, 217.5, 214.0]
+	I, U₁, U₂
 end
 
-# ╔═╡ 020231d4-c99c-43d4-b835-34450dadcf09
+# ╔═╡ 4a8a67ff-2145-4e5f-9b54-708ad92bc12c
+
+
+# ╔═╡ 7e536108-d92f-4e5f-bd37-e48924ff9943
 md"""
-Característica externa: $U =f(I)$ 
-com   $n$ e $R_{c}=\rm constantes$
+# a) Repartição de carga 💻
+**Como repartiriam as duas máquinas uma corrente de 1500A? Qual a tensão?**
 """
 
-# ╔═╡ bdc9dc1f-3a77-4588-8dba-f53ffd0da995
+# ╔═╡ 7b6d5dee-5fb8-4dc1-8557-370fc8698624
+H1=("Rcarga", @bind Rcarga PlutoUI.Slider(0.09:.0001:12, default=.143,show_value=true))
+
+# ╔═╡ d59f7a7e-10bb-43cb-9710-1a822afeeba9
+md"""
+Do gráfico, na característica $$U=f(I₁+I₂)$$, para uma carga de $$1500$$A, verifica-se: $$U\simeq215$$V, $$I₁\simeq650$$A e $$I₂\simeq850$$A.
+"""
+
+# ╔═╡ 6f29a5d9-d0b4-4057-83c6-0abbd349463e
+
+
+# ╔═╡ 16f830b5-2160-43c4-8ebb-6b5cab2d5726
+md"""
+# b) Cargas reduzidas 💻
+**O que se verifica para cargas reduzidas e próximas de zero? $$0 < I <250A$$**
+"""
+
+# ╔═╡ 10ce0429-8170-498d-b6a8-78c4d4005822
+md"""
+Analisando o funcionamento do paralelo de geradores DC para cargas reduzidas, verifica-se graficamente, que a máquina DC 2 absorve corrente (passa a motor DC). Por conseguinte, o gerador DC 1 fornece corrente para a carga e para a máquina 2.
+"""
+
+# ╔═╡ 61763b38-5700-4559-9171-d40612354f0b
+
+
+# ╔═╡ b15489fb-f0e8-4019-ab10-65a8f91ec8c5
+md"""
+# c) Complete:  💻
+
+\
+**“Em sobrecarga a máquina com __________ regulação, fornece __________ corrente.”**
+"""
+
+# ╔═╡ 9de717e1-542a-4b2a-9bc1-4e4ea16fb3ee
 begin
-	I = [0.0, 5.0, 10.0, 15.0, 20.0]
-	U = [278.0, 260.0, 242.0, 216.0, 186.0]
-	I, U	
+	O1=@bind pick1 MultiSelect(["maior", "menor", "melhor", "pior"])
+	O2=@bind pick2 MultiSelect(["menos", "mais", "mais ", "menos "])
+	O1, O2
 end
 
-# ╔═╡ 33309480-de5b-48d8-8108-d4c349d3b540
-
-
-# ╔═╡ 76cdc663-19dc-4a1e-8550-1d4a23ba7d18
+# ╔═╡ af4e9d09-cac3-4ca0-8735-70d3e358a1ad
 md"""
-# a) Excitação separada
-**Determine a queda de tensão interna total deste gerador.**
+Em sobrecarga a máquina com **$(pick1)** regulação, fornece **$(pick2)** corrente.
 """
 
-# ╔═╡ 0d29d92b-41ba-4c90-b4fd-810402788e9f
+# ╔═╡ 24c80cb7-1e2e-4959-ac83-6a756749f2ec
+
+
+# ╔═╡ 2ca2baf2-8970-4566-8738-5e4ff39e9fa5
 md"""
-A tensão de vazio, $$U_{0}$$, depende da força eletromotriz (FEM), $E_0$, sendo controlado pelo reóstato de campo do circuito de excitação independente, ou seja:
-$$U_{0}=E_{0}=$$ $(U[1,1])V 
-"""
-
-# ╔═╡ a7bbd43a-a1a3-40f2-a01a-48e6dbd2a302
-md"""
-Queda de tensão total, $\Delta U_{t}$, é dada por: 
-
-$$\Delta U_{t}=E_{0}-U$$
-
-com $$E_{0}$$ constante (não depende da corrente de carga).
-"""
-
-# ╔═╡ c6edc3fc-22ac-4d59-bd8a-edcb6ee1e6a5
-ΔUₜ = U[1,1] .- U[:,1]
-
-# ╔═╡ 1055c56d-8ac7-4b3c-882d-d754dfa13a6e
-
-
-# ╔═╡ 216516fa-f937-42ce-b4dd-d4890753ba77
-md"""
+# Cálculos 
 !!! nota
-	## Obter família de curvas 💻
-	- Com base numa $$E₀ =f(Iexc)$$ pode-se obter uma **família de características magnéticas**, em função da velocidade de acionamento do gerador;
-	- Com base numa $$U =f(I)$$ pode-se obter uma **família de características externas**, em função da corrente de campo e da velocidade de acionamento do gerador.
+	Nesta secção são exibidos os cálculos realizados para obter a construção gráfica apresentada neste *notebook*. Esta secção é de análise facultativa.
 """
 
-# ╔═╡ c5f95082-b8a6-45e7-a838-4ee9483b76d3
+# ╔═╡ 7e45e4aa-b6cd-4d9a-a78d-c0a32be51fc7
 md"""
-Tendo em consideração a expressão da FEM, $E_0$:
-
-$E_0=k\phi_0n$
-
-Podemos relacionar a FEM para diferentes velocidades. Assim, para a característica magnética, tem-se:
-
-$E_0(n_{mag}) = k\phi_0n_{mag}$
-
-Sendo, $n_{mag}$, a velocidade a que foi obtida a característica magnética. 
-
-Para qualquer outra velocidade, fica:
-
-$E_0(n) = k\phi_0n$
-
-Combinando as expressões de $E_0(n_{mag})$ e $E_0(n)$, tem-se:
-
-$\frac{E_0(n_{mag})}{E_0(n)} = \frac{k\phi_0n_{mag}}{k\phi_0n}$
-
-O fluxo magnético em vazio, $k\phi_0$, é independente da velocidade, variando somente com a corrente de excitação, $I_{ex}$. Assim com: 
-
- $k\phi_0 = \textbf{constante}$, para cada valor de $I_{ex}$, resulta:
-
-$E_0(n) = \frac{n}{n_{mag}} E_0(n_{mag})$
-
-Assim, pode-se relacionar as FEM e obter curvas de $E_0 = f(I_{ex})$ a diferentes velocidades, a partir da característica magnética obtida no ensaio em vazio.
-
+Determinação das correntes de cada gerador, `I₁` e `I₂`, por interpolação da característica externa do respectivo gerador DC, para diferentes valores de tensão do paralelo de geradores DC, `U`.\
+Inclui também a extrapolação das características externas de cada gerador para determinação gráfica de correntes circulatórias entre as máquinas e tensão de vazio com os geradores DC em paralelo:
 """
 
-# ╔═╡ 84177121-0d8d-4d90-a3ac-48add3561563
-md"""
-> 👉 Teste a variação da FEM com a velocidade, a partir do *slider* "Velocidade":
-"""
-
-# ╔═╡ dd2e5088-71bb-4e3b-8045-7d5b9eaf3861
-"Velocidade, rpm", @bind rpm PlutoUI.Slider(500:10:2000, default=1500, show_value=true)
-
-# ╔═╡ 46ae39af-c0ad-4c8f-80ae-c830946ca5ce
-E₀ₙ = round.((rpm/1500) .* E₀_1500, digits=1)
-
-# ╔═╡ 655f4216-bad9-4a90-9fac-a8439bdbdeba
-md"""
-> Forma computacional para consultar o valor da corrente de campo para uma dada FEM, por interpolação: 
-"""
-
-# ╔═╡ ede13ff1-533e-4916-90b8-54a0288188d7
-#utilizando pkg Dierckx.jl
+# ╔═╡ 1e4d5035-1f17-4d8f-aaf3-0c62ec511abc
 begin
-	Spl_Iexc = Spline1D(E₀_1500,Iexc)
-	Id00 = Spl_Iexc(U[1,1])
-	Id00 = round(Id00, digits=2)
-end
-
-# ╔═╡ 628ddb1e-e6eb-43c4-b1a1-760431a5be88
-md"""
-> Forma computacional para consultar o valor da FEM à velocidade $$n$$, para uma dada corrente de campo, por interpolação:
-"""
-
-# ╔═╡ 46cffa11-842e-4781-a291-f6fe4bd76ec6
-md"""
-> 👉 Teste o efeito da variação da corrente de excitação, $I_{ex}$, do gerador de excitação separada, no valor da tensão de vazio, $U_0$, e sobre a característica a característica externa:
-"""
-
-# ╔═╡ 83386f45-c442-44dd-82f4-2c6909b0e1ef
-"Iexc, A (circuito de exc. separada)", @bind Icampo PlutoUI.Slider(0:0.01:1.5, default=Id00, show_value=true)
-
-# ╔═╡ 4013e8e0-34b4-4ad4-8e12-cd827d8cef71
-#utilizando pkg Dierckx.jl
-begin
-	Spl_E₀ₙ = Spline1D(Iexc,E₀ₙ)
-	E₀exx = Spl_E₀ₙ(Icampo)
-	E₀exx = round(E₀exx, digits=2)
+	U = -205.5:-1:-229.5
+	I1int = Spline1D(-U₁, I, k=1, bc="extrapolate")
+	I2int = Spline1D(-U₂, I, k=1, bc="extrapolate")
+	I₁ = I1int(U)
+	I₂ = I2int(U)
+	I₁, I₂
 end;
 
-# ╔═╡ 4135fa9e-37f7-461d-a064-c08c892bf0e4
-"Rcarga, Ω", @bind Rcarga PlutoUI.Slider(1:1:1000, default=20, show_value=true)
+# ╔═╡ 76059231-9935-4437-bd3e-7d6b3ebcda63
+md"""
+Determinação das contribuições de carga de cada gerador DC, `Ic1` e `Ic2`, para uma dada resistência de carga, `Rcarga`, aplicada ao paralelo de geradores DC:
+"""
 
-# ╔═╡ 483480d6-427d-4f1f-9622-3cd267ac2aee
+# ╔═╡ 089dd348-6ff5-4f42-8487-bfe9e4b94d76
 begin
-	Uspeed=E₀exx.-ΔUₜ
-	P1=plot(I,Uspeed, title="U=f(I)", xlabel = "I(A)", ylabel="U(V)", 
-			ylims=(0,420), xlims=(0,20), lw=3, label="U=f(I)")
-	
-	plot!(I, Rcarga*I, xlims=(0,20),ylims=(0,400), 
-			linestyle=:dash, label="Reta de Carga=$(Rcarga)Ω", legend=:best)
-	
-	plot!(I,ΔUₜ, label="ΔUₜ", linecolor=:black)
-	
-	plot!([E₀exx], seriestype = :hline, linecolor=:green, 
-			label="E₀=f(I) => constante, U₀=$(round(E₀exx))V", legend=:topleft)
-	
-	P2=plot(Iexc,E₀ₙ,title="E₀=f(Iₑₓ), n=$(rpm)rpm", xflip=false, ylims=(0,400), 
-			xlabel = "Iₑₓ(A)", ylabel="E₀(V)", xlims=(0,1.5), lw=2, label=false)
-	
-	plot!([Icampo], seriestype = :vline, linecolor=:green,linestyle=:dash, 
-			xlims=(0,1.5),ylims=(0,400), label="ponto de excitação=$(Icampo)A", legend=:bottomright)
-	
-	plot!([E₀exx], seriestype = :hline, linecolor=:green, linestyle=:dash, 
-			xlims=(0,1.5),ylims=(0,400), label=:none, legend=:bottomright)
-	
-	plot(P2, P1, layout = (1, 2))
-end
-
-# ╔═╡ f7a52930-8df8-4460-a942-c6bbf3ff5283
-md"""
-> 👉 Arraste o *slider* "Velocidade" para junto das curvas características do gerador de excitação separada e observe o efeito da variação da velocidade sobre as mesmas.
-"""
-
-# ╔═╡ a7ff7d1a-3cc0-4169-b955-c3e4284b478b
-
-
-# ╔═╡ 88d250ff-0f4a-404c-b6dd-f977afd58033
-md"""
-# b) Excitação derivação
-**O que é a resistência crítica de um gerador com uma excitação derivação? Qual a sua importância? Como se determina (aproximadamente) na prática?**
-"""
-
-# ╔═╡ 43c2b9bd-cbdc-43de-bf8c-f0cfec8f438f
-md"""
-A resistência crítica serve para determinar o valor máximo de resistência de um circuito de excitação e consequentemente dimensionar o valor máximo do reostato de campo. Pode ser determinada aproximadamente pelo 1º par de valores não nulos da característica magnética.
-"""
-
-# ╔═╡ 3d90d0d1-7364-45f4-a8b2-c129b01acc6f
-Rcrítica = E₀_1500[2,1]/Iexc[2,1]
-
-# ╔═╡ 7b3693dc-5e73-48a2-b3c1-25a1acb65d9d
-begin
-	plot(Iexc,E₀_1500,title="E₀=f(Iₑₓ), n=1500rpm", xflip=false, ylims=(0,400), xlabel = "Iₑₓ(A)", ylabel="E₀(V)", xlims=(0,1.5), label=false)
-	plot!(Iexc,E₀_1500.-E₀_1500[1,1], label="E₀-E₀ᵣₑₘ")
-	plot!(Iexc,Rcrítica.*Iexc,label="Rcrítica")
-end
-
-# ╔═╡ 1f4f7952-3a04-48a5-b016-811340d4d5b5
-
-
-# ╔═╡ ec518b39-8f04-433a-88dc-589d802a8764
-md"""
-# c) Circuito de excitação
-**Qual a resistência do enrolamento indutor, sabendo que como gerador derivação, à velocidade nominal, sem resistência de campo, $$U_0=294\rm{V}$$.**
-"""
-
-# ╔═╡ d2d7a521-3c6c-4835-8fd9-ada41a3fa84a
-md"""
-A reta de excitação, $$U=R_{ex}I_d$$, determina o valor da tensão em vazio $$U_0$$ no ponto de intersecção com a característica magnética. Por conseguinte, não havendo reóstato de campo, $$R_c=0Ω$$, a resistência do circuito de excitação, $$R_{ex}=R_c+R_d$$, corresponde apenas à resistência do enrolamento indutor, $$R_d$$.
-"""
-
-# ╔═╡ 8974954c-afb3-4238-bcb3-4c7027af62e1
-begin
-		Id_294=round(Spl_Iexc(294), digits=2)
-		Rd=round(294/Id_294, digits=1)
+	Iₜ = I₁ + I₂
+	Ic = 0:.01:2300
+	Uc = Rcarga .* Ic
+	Up_int = Spline1D(-Iₜ,U)
+	Up = (-1) .* Up_int(-Ic)
+	A = (Up-Uc)
+	a = findall(i->(-.1 < i < .1), A)
+	Itotal = .01 * a[1,1]
+	Ic1 = I1int(-Rcarga * Itotal)
+	Ic2 = I2int(-Rcarga * Itotal)
 end;
 
-# ╔═╡ a2dff0a0-4d68-49dd-86fd-8236795b3f44
-md"""
-Assim, em dois passos determina-se o valor de $$R_{ex}=R_d$$:
-- consultar a característica magnética para obter a corrente de campo correspondente a $$U_0=294$$V;
-- cálculo da resistência do circuito de excitação
-Obtém-se, $$R_d=$$ $(Rd)Ω
-"""
-
-# ╔═╡ 99e21df1-559f-4e73-933e-5561205ed3f5
-
-
-# ╔═╡ feca6cc5-514f-423d-8a88-68ebf7a139b4
-md"""
-# d) $$U =f(I)$$ com ⇅ do $$R_c$$ 💻
-**Explicite qualitativamente qual a influência que a variação da resistência de campo tem, sobre a característica externa do gerador derivação. Justifique sucintamente.**
-"""
-
-# ╔═╡ 6f5c99d9-e601-40db-b84a-0ad3d4f1cc26
-"Rexc (circuito exc. derivação), Ω", @bind Rexc PlutoUI.Slider(300/1.5:1:Rcrítica, default=356, show_value=true) #default=278/Id00
-
-# ╔═╡ 1c525022-003b-45ab-9e89-ace963c2ae78
-# Determinação computacional da U=f(I), ligando os sucessivos valores de ΔUₜ(Id) com ΔUₜ(I):
+# ╔═╡ 5d931a49-0a5e-4ad0-b726-9996ae7cbe7e
 begin
-	# interpolação dos valores de E₀ₙ para valores de Id
-	j = 0.001
-	id = 0:j:1.5
-	E₀shunt = Spline1D(Iexc,E₀ₙ)
-	E₀_shunt = E₀shunt(id)
-
-	#ΔUₜ(Id) = E₀(Id) - Rexc Id
-	ΔUₜ_exc = E₀_shunt - Rexc .* id
+	# alterar o parâmetro "ylims" para a fazer zoom ao gráfico!
+	plot(I,U₁, ylims=(00,250), markershape=:circle, markersize=3, 
+			linecolor=:blue, linewidth=0, title="U =f(I)", xlabel = "I(A)", ylabel="U(V)", framestyle = :origin, minorticks=5, label="U₁=f(I₁)")
 	
-	# selecção dos valores positivos de ΔUₜ(Id)
-	ΔUₜ_exc = ΔUₜ_exc[ΔUₜ_exc .>= 0]
+	plot!(I,U₂, markershape=:circle, markersize=3, linecolor=:red, 
+			linewidth=0, label="U₂=f(I₂)", legend=:bottomright)
 	
-	# interpolação dos valores de I (carga) na curva ΔUₜ(I), para os valores de ΔUₜ(Id) encontrados
-	Ishunt = Spline1D(ΔUₜ,I)
-	I_shunt = Ishunt(ΔUₜ_exc)
-end;
-
-# ╔═╡ 032831d9-8167-4039-a5ac-f088cc9efc21
-begin
-	ii = count(i->(i>= 0), ΔUₜ_exc)
-	id_ii = 0:j:((ii-1)*j)
-	Ud=Rexc.*id_ii
-	I_shunt, id_ii, Ud, ΔUₜ_exc
+	plot!(I₁,-U, linecolor=:blue, label=:none)
 	
-	P3=plot(I_shunt,Ud, 
-			title="Característica externa", xlabel = "I(A)", ylabel="U(V)", 
-			ylims=(0,400), xlims=(0,30), label=false,linewidth=2)
+	plot!(I₂,-U, linecolor=:red, label=:none)
 	
-	plot!(I, Rcarga.*I, label="Reta de Carga", legend=:topright)
+	plot!(I₁+I₂, -U, xlims=(-500,2500), linewidth=2, markershape=:circle,
+			markersize=3, label="U=f(Iₜₒₜₐₗ)", xminorgrid=true)
 	
-	plot!(I_shunt, ΔUₜ_exc, label="ΔUₜ", legend=:topright)
+	#plot!([210], seriestype = :hline, linestyle=:dash)
 	
-	P4=plot(Iexc,E₀ₙ,
-			title="Característica vazio", xlabel = "Id(A)", ylabel="U₀(V)", 
-			ylims=(0,400), xlims=(0,1.5), label=false, linewidth=2, xflip=true)
+	plot!(I₁+I₂, Rcarga.*(I₁+I₂), linewidth=3, label="reta carga")
 	
-	plot!(id, Rexc.*id, xlims=(0,1.5),ylims=(0,400), 
-			label="Reta de excitação", legend=:topright)
+	plot!([Itotal], seriestype = :vline, linestyle=:dash, 
+			linecolor=:brown, label=:none)
 	
-	plot(P4, P3, layout = (1, 2))
+	plot!([Rcarga*Itotal], seriestype = :hline, linestyle=:dash, label=:none)
+	
+	plot!([Ic1], seriestype = :vline, linestyle=:dashdot, 
+			linecolor=:blue, label=:none)
+	
+	plot!([Ic2], seriestype = :vline, linestyle=:dashdot, 
+			linecolor=:red, label=:none)
 end
 
-# ╔═╡ 6d6d84cd-9fa1-4b9c-8146-730fe420fc74
-md"""
-!!! nota
-	👉 Arraste os *sliders* "Velocidade" e "Rcarga" para junto das curvas características do gerador *shunt*.
-
-	## $$U =f(I)$$ com ⇅ da $$n$$ 💻
-	**Observe o comportamento da característica externa do gerador derivação, $$U =f(I)$$, para diferentes valores de velocidade de acionamento, $$n$$ , e reóstato de campo constante, $$R_c=constante$$. \
-	Compare as características externas deste gerador de corrente contínua, com excitação *shunt* e com excitação separada.**
-"""
-
-# ╔═╡ ed07e275-7ff6-4c9e-8a26-7dfcd79d7abe
+# ╔═╡ 41137dae-b56e-4f68-8bac-98ad72262080
 
 
-# ╔═╡ 85234e93-01fe-47d8-be53-ef84f7cde6a9
-md"""
-# e) Alteração de U₀ sem Rc
-**Nas condições de excitação da alínea c), como proceder para obter uma tensão de vazio de $$336\rm{V}$$.**
-"""
-
-# ╔═╡ c101ce8d-3da8-4836-a6aa-97cae52e7552
-begin
-	U₀ = 336
-	# Cálculo de Id
-	Id = U₀/Rd
-	Id = round(Id, digits=1)
-
-	# Retirar o valor de E₀ para o valor de Id calculado na característica magnética a 1500rpm (modo computacional, por interpolação)
-	Spl_E₀ = Spline1D(Iexc,E₀_1500)
-	E₀_Id = Spl_E₀(Id)
-	E₀_Id = round(E₀_Id, digits=1)
-	
-	# Cálculo de Kϕ
-	Kϕ = E₀_Id/1500
-
-	# Cálculo da velocidade,rpm
-	n = U₀/Kϕ
-	n = round(n, digits=1)
-
-	# mostrar sequência de resultados
-	Id, E₀_Id, Kϕ, n  		
-end
-
-# ╔═╡ d62dc9fb-62f2-4503-8643-4aeeff617202
-md"""
-Não havendo reóstato de campo, apenas é possível ajustar de tensão de vazio através da velocidade de acionamento.  
-Calculando, obtém-se: $$n=$$ $(n) rpm
-"""
-
-# ╔═╡ e2eca547-4db1-4a6b-97ab-325e7be0a745
-
-
-# ╔═╡ e44e9399-4830-41a1-b3b4-95c5bb0ef24d
+# ╔═╡ 2effa5ea-4c7c-42cf-8872-91274a18b17b
 md"""
 # *Notebook*
 """
 
-# ╔═╡ 2257a478-ed9b-4a7b-9dcc-5a29d7435990
+# ╔═╡ 3c605565-784f-4ee7-8ff6-0ff77eff34f8
 md"""
 Documentação das bibliotecas Julia utilizadas:  [Dierckx](https://github.com/kbarbary/Dierckx.jl), [Plots](http://docs.juliaplots.org/latest/), [PlutoUI](https://juliahub.com/docs/PlutoUI/abXFp/0.7.6/).
 """
 
-# ╔═╡ 6e11f240-f4a2-417b-aec5-e7c1cd5ee87f
+# ╔═╡ 15a21bc0-7fcf-4af9-a8f6-693e2dec05ad
 begin
 	# other stuff:
 	isel_logo="https://www.isel.pt/sites/default/files/NoPath%20-%20Copy%402x_0.png"
+	julia_logo="https://github.com/JuliaLang/julia-logo-graphics/blob/master/images/julia-logo-color.png?raw=true"
 	version=VERSION
 end;
 
-# ╔═╡ 499d94be-99d3-4da2-b5cf-794f94e851e2
+# ╔═╡ 1dd1e360-e3d5-4137-915e-57a7669981f2
 ThreeColumn(md"$(Resource(isel_logo, :height => 75))", md"
 $\textbf{\color{green}{Lic. em Engenharia Eletrotécnica }}$", md"$\text{ Máquinas Elétricas II}$")
 
-# ╔═╡ a0bba541-aab2-4c45-83be-743d0e9dc9ee
+# ╔═╡ 93f0c834-6b63-494e-829f-181066732a3b
 md"""
 *Notebook* realizado em linguagem de computação científica Julia versão $(version).
 
-**_Time to first plot_**: até cerca de 1.3 min.
+**_Time to first plot_**: até cerca de 1.1 min.
 
 **Computador**: Intel® Core™ i7-7600U CPU @ 2.80GHz; 24GB RAM.
 """
 
-# ╔═╡ 4ab2ae32-7315-4867-9b9a-021a7bfb9e49
+# ╔═╡ 5be44370-93ed-4bd7-82eb-9dc50d78ffc6
 md"""
 !!! info
 	No índice deste *notebook*, os tópicos assinalados com "💻" requerem a participação do estudante.
 """
 
-# ╔═╡ 9ad6bdff-e6b8-49b8-aef2-becc8e3898cc
+# ╔═╡ b15f8fa6-04c9-425c-865b-013f06113bcb
 TableOfContents(title="Índice")
 
-# ╔═╡ 721e3e66-f198-43d3-acc4-a14164e1e29c
+# ╔═╡ 6554ac49-0f3d-409e-a6a8-d0d6515087b3
 md"""
 ---
 """
 
-# ╔═╡ b176721c-6a68-4041-b1a7-cbb7122d4af5
+# ╔═╡ f8b33a49-57f6-482f-87ac-36184ddb3e37
 ThreeColumn(md"Text content: [![](https://i.creativecommons.org/l/by-sa/4.0/80x15.png)](http://creativecommons.org/licenses/by-sa/4.0/)", md"`Julia code`: [`MIT License`](https://www.tldrlegal.com/license/mit-license)", md" $$©$$ [`2023 Ricardo Luís`](https://ricardo-luis.github.io/lee-me2/)")
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
@@ -460,7 +270,7 @@ PlutoUI = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
 
 [compat]
 Dierckx = "~0.5.3"
-Plots = "~1.38.17"
+Plots = "~1.39.0"
 PlutoTeachingTools = "~0.2.13"
 PlutoUI = "~0.7.52"
 """
@@ -471,7 +281,7 @@ PLUTO_MANIFEST_TOML_CONTENTS = """
 
 julia_version = "1.9.3"
 manifest_format = "2.0"
-project_hash = "8645fc524dd2c8aa46d2b8eff93326a7d61ba823"
+project_hash = "66a0ce8179a1d8427232913359683f312482ff8a"
 
 [[deps.AbstractPlutoDingetjes]]
 deps = ["Pkg"]
@@ -704,10 +514,10 @@ uuid = "78b55507-aeef-58d4-861c-77aaff3498b1"
 version = "0.21.0+0"
 
 [[deps.Glib_jll]]
-deps = ["Artifacts", "Gettext_jll", "JLLWrappers", "Libdl", "Libffi_jll", "Libiconv_jll", "Libmount_jll", "PCRE2_jll", "Pkg", "Zlib_jll"]
-git-tree-sha1 = "d3b3624125c1474292d0d8ed0f65554ac37ddb23"
+deps = ["Artifacts", "Gettext_jll", "JLLWrappers", "Libdl", "Libffi_jll", "Libiconv_jll", "Libmount_jll", "PCRE2_jll", "Zlib_jll"]
+git-tree-sha1 = "e94c92c7bf4819685eb80186d51c43e71d4afa17"
 uuid = "7746bdde-850d-59dc-9ae8-88ece973131d"
-version = "2.74.0+2"
+version = "2.76.5+0"
 
 [[deps.Graphite2_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
@@ -722,9 +532,9 @@ version = "1.0.2"
 
 [[deps.HTTP]]
 deps = ["Base64", "CodecZlib", "ConcurrentUtilities", "Dates", "ExceptionUnwrapping", "Logging", "LoggingExtras", "MbedTLS", "NetworkOptions", "OpenSSL", "Random", "SimpleBufferStream", "Sockets", "URIs", "UUIDs"]
-git-tree-sha1 = "cb56ccdd481c0dd7f975ad2b3b62d9eda088f7e2"
+git-tree-sha1 = "19e974eced1768fb46fd6020171f2cec06b1edb5"
 uuid = "cd3eb016-35fb-5094-929b-558a96fad6f3"
-version = "1.9.14"
+version = "1.9.15"
 
 [[deps.HarfBuzz_jll]]
 deps = ["Artifacts", "Cairo_jll", "Fontconfig_jll", "FreeType2_jll", "Glib_jll", "Graphite2_jll", "JLLWrappers", "Libdl", "Libffi_jll", "Pkg"]
@@ -879,10 +689,10 @@ uuid = "7add5ba3-2f88-524e-9cd5-f83b8a55f7b8"
 version = "1.42.0+0"
 
 [[deps.Libiconv_jll]]
-deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
-git-tree-sha1 = "c7cb1f5d892775ba13767a87c7ada0b980ea0a71"
+deps = ["Artifacts", "JLLWrappers", "Libdl"]
+git-tree-sha1 = "f9557a255370125b405568f9767d6d195822a175"
 uuid = "94ce4f54-9a6c-5748-9c1c-f9c7231a4531"
-version = "1.16.1+2"
+version = "1.17.0+0"
 
 [[deps.Libmount_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
@@ -927,9 +737,9 @@ uuid = "56ddb016-857b-54e1-b83d-db4d58db5568"
 
 [[deps.LoggingExtras]]
 deps = ["Dates", "Logging"]
-git-tree-sha1 = "a03c77519ab45eb9a34d3cfe2ca223d79c064323"
+git-tree-sha1 = "0d097476b6c381ab7906460ef1ef1638fbce1d91"
 uuid = "e6f89c97-d47a-5376-807f-9c37f3926c36"
-version = "1.0.1"
+version = "1.0.2"
 
 [[deps.LoweredCodeUtils]]
 deps = ["JuliaInterpreter"]
@@ -1071,9 +881,9 @@ version = "1.3.5"
 
 [[deps.Plots]]
 deps = ["Base64", "Contour", "Dates", "Downloads", "FFMPEG", "FixedPointNumbers", "GR", "JLFzf", "JSON", "LaTeXStrings", "Latexify", "LinearAlgebra", "Measures", "NaNMath", "Pkg", "PlotThemes", "PlotUtils", "PrecompileTools", "Preferences", "Printf", "REPL", "Random", "RecipesBase", "RecipesPipeline", "Reexport", "RelocatableFolders", "Requires", "Scratch", "Showoff", "SparseArrays", "Statistics", "StatsBase", "UUIDs", "UnicodeFun", "UnitfulLatexify", "Unzip"]
-git-tree-sha1 = "9f8675a55b37a70aa23177ec110f6e3f4dd68466"
+git-tree-sha1 = "ccee59c6e48e6f2edf8a5b64dc817b6729f99eb5"
 uuid = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
-version = "1.38.17"
+version = "1.39.0"
 
     [deps.Plots.extensions]
     FileIOExt = "FileIO"
@@ -1222,9 +1032,9 @@ version = "1.9.0"
 
 [[deps.StatsAPI]]
 deps = ["LinearAlgebra"]
-git-tree-sha1 = "45a7769a04a3cf80da1c1c7c60caf932e6f4c9f7"
+git-tree-sha1 = "1ff449ad350c9c4cbc756624d6f8a8c3ef56d3ed"
 uuid = "82ae8749-77ed-4fe6-ae5f-f523153014b0"
-version = "1.6.0"
+version = "1.7.0"
 
 [[deps.StatsBase]]
 deps = ["DataAPI", "DataStructures", "LinearAlgebra", "LogExpFunctions", "Missings", "Printf", "Random", "SortingAlgorithms", "SparseArrays", "Statistics", "StatsAPI"]
@@ -1324,10 +1134,10 @@ uuid = "2381bf8a-dfd0-557d-9999-79630e7b1b91"
 version = "1.25.0+0"
 
 [[deps.XML2_jll]]
-deps = ["Artifacts", "JLLWrappers", "Libdl", "Libiconv_jll", "Pkg", "Zlib_jll"]
-git-tree-sha1 = "93c41695bc1c08c46c5899f4fe06d6ead504bb73"
+deps = ["Artifacts", "JLLWrappers", "Libdl", "Libiconv_jll", "Zlib_jll"]
+git-tree-sha1 = "04a51d15436a572301b5abbb9d099713327e9fc4"
 uuid = "02c8fc9c-b97f-50b9-bbe4-9be30ff0a78a"
-version = "2.10.3+0"
+version = "2.10.4+0"
 
 [[deps.XSLT_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Libgcrypt_jll", "Libgpg_error_jll", "Libiconv_jll", "Pkg", "XML2_jll", "Zlib_jll"]
@@ -1549,65 +1359,40 @@ version = "1.4.1+0"
 """
 
 # ╔═╡ Cell order:
-# ╟─1f9f4012-1be5-42a4-8d56-949d783e6518
-# ╟─5277a02b-2fd9-49b6-958f-3c6d53d3e433
-# ╟─499d94be-99d3-4da2-b5cf-794f94e851e2
-# ╟─9a4e9d24-3fd0-405f-adc3-4afc509629ef
-# ╟─75ecba91-0134-4ebe-8c7d-683a75b86137
-# ╟─f33dd982-062c-4369-ac89-4b4a6e2d231c
-# ╟─1ea689c9-8cac-4045-b7e7-6ca0cf228b10
-# ╠═4354f1c7-0bcd-41d5-b561-94d39882390d
-# ╟─020231d4-c99c-43d4-b835-34450dadcf09
-# ╠═bdc9dc1f-3a77-4588-8dba-f53ffd0da995
-# ╟─33309480-de5b-48d8-8108-d4c349d3b540
-# ╟─76cdc663-19dc-4a1e-8550-1d4a23ba7d18
-# ╟─0d29d92b-41ba-4c90-b4fd-810402788e9f
-# ╟─a7bbd43a-a1a3-40f2-a01a-48e6dbd2a302
-# ╠═c6edc3fc-22ac-4d59-bd8a-edcb6ee1e6a5
-# ╟─1055c56d-8ac7-4b3c-882d-d754dfa13a6e
-# ╟─216516fa-f937-42ce-b4dd-d4890753ba77
-# ╟─c5f95082-b8a6-45e7-a838-4ee9483b76d3
-# ╟─84177121-0d8d-4d90-a3ac-48add3561563
-# ╟─dd2e5088-71bb-4e3b-8045-7d5b9eaf3861
-# ╠═46ae39af-c0ad-4c8f-80ae-c830946ca5ce
-# ╟─655f4216-bad9-4a90-9fac-a8439bdbdeba
-# ╠═ede13ff1-533e-4916-90b8-54a0288188d7
-# ╟─628ddb1e-e6eb-43c4-b1a1-760431a5be88
-# ╠═4013e8e0-34b4-4ad4-8e12-cd827d8cef71
-# ╟─46cffa11-842e-4781-a291-f6fe4bd76ec6
-# ╟─83386f45-c442-44dd-82f4-2c6909b0e1ef
-# ╟─4135fa9e-37f7-461d-a064-c08c892bf0e4
-# ╟─483480d6-427d-4f1f-9622-3cd267ac2aee
-# ╟─f7a52930-8df8-4460-a942-c6bbf3ff5283
-# ╟─a7ff7d1a-3cc0-4169-b955-c3e4284b478b
-# ╟─88d250ff-0f4a-404c-b6dd-f977afd58033
-# ╟─43c2b9bd-cbdc-43de-bf8c-f0cfec8f438f
-# ╠═3d90d0d1-7364-45f4-a8b2-c129b01acc6f
-# ╟─7b3693dc-5e73-48a2-b3c1-25a1acb65d9d
-# ╟─1f4f7952-3a04-48a5-b016-811340d4d5b5
-# ╟─ec518b39-8f04-433a-88dc-589d802a8764
-# ╟─d2d7a521-3c6c-4835-8fd9-ada41a3fa84a
-# ╟─a2dff0a0-4d68-49dd-86fd-8236795b3f44
-# ╠═8974954c-afb3-4238-bcb3-4c7027af62e1
-# ╟─99e21df1-559f-4e73-933e-5561205ed3f5
-# ╟─feca6cc5-514f-423d-8a88-68ebf7a139b4
-# ╠═1c525022-003b-45ab-9e89-ace963c2ae78
-# ╟─6f5c99d9-e601-40db-b84a-0ad3d4f1cc26
-# ╟─032831d9-8167-4039-a5ac-f088cc9efc21
-# ╟─6d6d84cd-9fa1-4b9c-8146-730fe420fc74
-# ╟─ed07e275-7ff6-4c9e-8a26-7dfcd79d7abe
-# ╟─85234e93-01fe-47d8-be53-ef84f7cde6a9
-# ╟─d62dc9fb-62f2-4503-8643-4aeeff617202
-# ╠═c101ce8d-3da8-4836-a6aa-97cae52e7552
-# ╟─e2eca547-4db1-4a6b-97ab-325e7be0a745
-# ╟─e44e9399-4830-41a1-b3b4-95c5bb0ef24d
-# ╟─2257a478-ed9b-4a7b-9dcc-5a29d7435990
-# ╠═a99eb837-a18d-4a4c-a4d3-756cc2e6b1de
-# ╟─6e11f240-f4a2-417b-aec5-e7c1cd5ee87f
-# ╟─a0bba541-aab2-4c45-83be-743d0e9dc9ee
-# ╟─4ab2ae32-7315-4867-9b9a-021a7bfb9e49
-# ╠═9ad6bdff-e6b8-49b8-aef2-becc8e3898cc
-# ╟─721e3e66-f198-43d3-acc4-a14164e1e29c
-# ╟─b176721c-6a68-4041-b1a7-cbb7122d4af5
+# ╟─a4cc4ad7-04fd-41cf-b6a9-8cdede20b8af
+# ╟─7fdb306c-0729-40bb-bfc7-2ce826fe936b
+# ╟─1dd1e360-e3d5-4137-915e-57a7669981f2
+# ╟─f01a2e6c-801d-4c1e-bc60-ce30c475bdc0
+# ╟─570473a3-be60-4ff1-b6d7-269c7c3cd321
+# ╟─860e56f2-921c-4943-a31b-3c2a896ca092
+# ╠═f50f251e-afe1-4ae3-8607-4d325a7c6116
+# ╟─4a8a67ff-2145-4e5f-9b54-708ad92bc12c
+# ╟─7e536108-d92f-4e5f-bd37-e48924ff9943
+# ╟─7b6d5dee-5fb8-4dc1-8557-370fc8698624
+# ╟─5d931a49-0a5e-4ad0-b726-9996ae7cbe7e
+# ╟─d59f7a7e-10bb-43cb-9710-1a822afeeba9
+# ╟─6f29a5d9-d0b4-4057-83c6-0abbd349463e
+# ╟─16f830b5-2160-43c4-8ebb-6b5cab2d5726
+# ╟─10ce0429-8170-498d-b6a8-78c4d4005822
+# ╟─61763b38-5700-4559-9171-d40612354f0b
+# ╟─b15489fb-f0e8-4019-ab10-65a8f91ec8c5
+# ╟─af4e9d09-cac3-4ca0-8735-70d3e358a1ad
+# ╟─9de717e1-542a-4b2a-9bc1-4e4ea16fb3ee
+# ╟─24c80cb7-1e2e-4959-ac83-6a756749f2ec
+# ╟─2ca2baf2-8970-4566-8738-5e4ff39e9fa5
+# ╟─7e45e4aa-b6cd-4d9a-a78d-c0a32be51fc7
+# ╠═1e4d5035-1f17-4d8f-aaf3-0c62ec511abc
+# ╟─76059231-9935-4437-bd3e-7d6b3ebcda63
+# ╠═089dd348-6ff5-4f42-8487-bfe9e4b94d76
+# ╟─41137dae-b56e-4f68-8bac-98ad72262080
+# ╟─2effa5ea-4c7c-42cf-8872-91274a18b17b
+# ╟─3c605565-784f-4ee7-8ff6-0ff77eff34f8
+# ╠═f06ea9e2-b9ed-4f8f-9278-9441cd270ca5
+# ╟─15a21bc0-7fcf-4af9-a8f6-693e2dec05ad
+# ╟─93f0c834-6b63-494e-829f-181066732a3b
+# ╟─5be44370-93ed-4bd7-82eb-9dc50d78ffc6
+# ╠═b15f8fa6-04c9-425c-865b-013f06113bcb
+# ╟─6554ac49-0f3d-409e-a6a8-d0d6515087b3
+# ╟─f8b33a49-57f6-482f-87ac-36184ddb3e37
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
