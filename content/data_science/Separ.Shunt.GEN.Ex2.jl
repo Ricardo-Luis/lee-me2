@@ -3,10 +3,13 @@
 
 #> [frontmatter]
 #> chapter = 1
+#> video = ""
+#> image = "https://github.com/Ricardo-Luis/lee-me2/blob/main/content/assets/zoom_logo.svg"
 #> section = 1
 #> order = 1
 #> title = "🛠️ Gerador: exc. separada vs. shunt"
 #> layout = "layout.jlhtml"
+#> youtube_id = ""
 #> description = ""
 #> tags = ["lecture", "module2"]
 
