@@ -26,6 +26,8 @@ Indicação da notação utilizada no *website* e nos *notebooks*.
 
 - [Julia Packages](https://juliapackages.com/packages?sort=stars)
 
+- 🎈 Rémi Vezy, [Julia course: from total beginner to power user](https://vezy.github.io/julia_course/) 
+
 
 ## Pluto.jl
 
