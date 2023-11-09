@@ -68,4 +68,7 @@ No final de cada *notebook* é indicado o tempo da 1ª compilação, acompanhado
 
 - William F Godoy, [Julia's Value Proposition for Better Scientific Software](https://bssw.io/blog_posts/julia-s-value-proposition-for-better-scientific-software), artigo de opinião, Better Scientific Software, Abril, 2023.
 
-- Abel Soares Siqueira, Gustavo Sarturi, João Okimoto, Kally Chung, [Introdução à programação em Julia](https://juliaintro.github.io/JuliaIntroBR.jl/), tradução do livro de: Allen Downey, Ben Lauwens, [Think Julia: How to Think Like a Computer Scientist](https://benlauwens.github.io/ThinkJulia.jl/latest/book.html), O’Reilly Media, 2018. 
+- Abel Soares Siqueira, Gustavo Sarturi, João Okimoto, Kally Chung, [Introdução à programação em Julia](https://juliaintro.github.io/JuliaIntroBR.jl/), tradução do livro de: Allen Downey, Ben Lauwens, [Think Julia: How to Think Like a Computer Scientist](https://benlauwens.github.io/ThinkJulia.jl/latest/book.html), O’Reilly Media, 2018.
+
+- João Marcello Pereira, Mario Benjamim Baptista de Siqueira, [Linguagem de programação JULIA: uma alternativa open source e de alto desempenho ao MATLAB], (https://periodicos.ifpb.edu.br/index.php/principia/article/view/1345), Revista principia - divulgação científica e tecnológica do IFPB, N.º 34, p. 132-140, 2017.
+
