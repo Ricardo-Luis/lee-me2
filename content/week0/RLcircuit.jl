@@ -2,12 +2,12 @@
 # v0.19.32
 
 #> [frontmatter]
-#> chapter = "0"
-#> section = "2"
-#> order = "2"
+#> chapter = 0
+#> section = 2
+#> order = 2
 #> title = "Diagramas vetoriais"
-#> tags = ["preliminaries"]
 #> layout = "layout.jlhtml"
+#> tags = ["preliminaries"]
 
 using Markdown
 using InteractiveUtils
