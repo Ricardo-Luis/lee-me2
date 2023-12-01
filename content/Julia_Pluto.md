@@ -57,7 +57,7 @@ No final de cada *notebook* é indicado o tempo da 1ª compilação, acompanhado
 
 - Connor Burns, [A Guide to Building Reactive Notebooks for Scientific Computing With Julia and Pluto.jl](https://medium.com/swlh/a-guide-to-building-reactive-notebooks-for-scientific-computing-with-julia-and-pluto-jl-1a2c0c455d51), artigo de opinião, Medium, Dez. 2020.
 
-- Lee Phillips, [An introduction to Pluto]](https://lwn.net/Articles/835930/), artigo de opinião, LWN.net, Nov. 2020.
+- Lee Phillips, [An introduction to Pluto](https://lwn.net/Articles/835930/), artigo de opinião, LWN.net, Nov. 2020.
 
 
 ## Sobre a linguagem de programação Julia
