@@ -134,7 +134,7 @@ Quando outra pessoa abrir seu <em>notebook</em> com o Pluto, o mesmo ambiente de
 </ul>
 <p>Assim, os <em>notebooks</em> reativos com Julia/Pluto podem fomentar a transparência, reprodutibilidade, reutilização e inovação em ciência/engenharia.</p>
 <h2 id="time-to-first-plot"><a href="#time-to-first-plot" class="anchor"></a>“<em>Time to first plot</em>”</h2>
-<p>Julia é uma linguagem compilada <em>just-in-time</em> (JIT). Isso significa que o compilador irá gerar código binário conforme necessário. Assim, quando abrir/executar o <em>notebook</em> pela primeira vez, verificará que tem de aguardar algum tempo pela compilação do código Julia, dependendo da complexidade do mesmo e da capacidade de processamento do seu computador. Por exemplo, a biblioteca <code>Plots.jl</code> para realização de gráficos tem uma dimensão considerável e exige tempo de compilação. Esta latência na compilação de um programa Julia é conhecida por [”<strong><em>time to first plot</em></strong>”], que teve melhorias significativas nas versões <a href="https://lwn.net/Articles/856819/">1.6</a> e <a href="https://lwn.net/Articles/933019/">1.9</a> do Julia. Após a 1ª execução, apenas as alterações que realize (no código, nos dados, por interação) serão compiladas, pelo que verificará, a partir daí o <a href="https://julialang.org/benchmarks/">elevado desempenho</a> da linguagem Julia.</p>
+<p>Julia é uma linguagem compilada <em>just-in-time</em> (JIT). Isso significa que o compilador irá gerar código binário conforme necessário. Assim, quando abrir/executar o <em>notebook</em> pela primeira vez, verificará que tem de aguardar algum tempo pela compilação do código Julia, dependendo da complexidade do mesmo e da capacidade de processamento do seu computador. Por exemplo, a biblioteca <code>Plots.jl</code> para realização de gráficos tem uma dimensão considerável e exige tempo de compilação. Esta latência na compilação de um programa Julia é conhecida por “<strong><em>time to first plot</em></strong>”, que teve melhorias significativas nas versões <a href="https://lwn.net/Articles/856819/">1.6</a> e <a href="https://lwn.net/Articles/933019/">1.9</a> do Julia. Após a 1ª execução, apenas as alterações que realize (no código, nos dados, por interação) serão compiladas, pelo que verificará, a partir daí o <a href="https://julialang.org/benchmarks/">elevado desempenho</a> da linguagem Julia.</p>
 <p>Assim, como sugestão, após abrir um dos <em>notebooks</em> de Máquinas Elétricas II no seu Julia/Pluto, pode fazer uma primeira leitura desse <em>notebook</em> na versão estática do mesmo, disponibilizada neste <em>website</em>, até a 1ª compilação/execução terminar, para então depois poder utilizá-lo.</p>
 <p>No final de cada <em>notebook</em> é indicado o tempo da 1ª compilação, acompanhado das informações sobre a frequência de processamento do CPU e a capacidade de memória RAM do computador em que foi testado, como referência.</p>
 <h1 id="informação-complementar"><a href="#informação-complementar" class="anchor"></a>Informação complementar</h1>
@@ -162,16 +162,7 @@ Quando outra pessoa abrir seu <em>notebook</em> com o Pluto, o mesmo ambiente de
 <p>Jeff Bezanson, Stefan Karpinski, Viral B. Shah, Alan Edelman, <a href="https://julialang.org/blog/2012/02/why-we-created-julia/">Why We Created Julia</a>, Massachusetts Institute of Technology, Fev. 2012.</p>
 </li>
 <li>
-<p>Gabriel Gauci Maistre, <a href="https://blog.goodaudience.com/10-reasons-why-you-should-learn-julia-d786ac29c6ca">10 Reasons Why You Should Learn Julia</a>, artigo de opinião, Good Audience, Set. 2018.</p>
-</li>
-<li>
-<p>Lee Phillips, <a href="https://www.admin-magazine.com/Archive/2019/50/Julia-Fast-as-Fortran-easy-as-Python">Julia: Fast as Fortran, easy as Python</a>, ADMIN Magazine, Issue 50, 2019.</p>
-</li>
-<li>
-<p>Bekhruz Tuychiev, <a href="https://www.datacamp.com/blog/the-rise-of-julia-is-it-worth-learning-in-2022">The Rise of the Julia Programming Language  — Is it Worth Learning in 2023?</a>, artigo de opinião, DataCamp, Maio 2023.</p>
-</li>
-<li>
-<p>William F Godoy, <a href="https://bssw.io/blog_posts/julia-s-value-proposition-for-better-scientific-software">Julia’s Value Proposition for Better Scientific Software</a>, artigo de opinião, Better Scientific Software, Abril, 2023.</p>
+<p>Gabriel Maistre, <a href="https://blog.goodaudience.com/10-reasons-why-you-should-learn-julia-d786ac29c6ca">10 Reasons Why You Should Learn Julia</a>, artigo de opinião, Good Audience, Set. 2018.</p>
 </li>
 <li>
 <p>Lee Phillips, <a href="https://lwn.net/Articles/763626/">An introduction to the Julia language, part 1</a>, LWN.net, Ago. 2018.</p>
@@ -180,10 +171,25 @@ Quando outra pessoa abrir seu <em>notebook</em> com o Pluto, o mesmo ambiente de
 <p>Lee Phillips, <a href="https://lwn.net/Articles/764001/">An introduction to the Julia language, part 2</a>, LWN.net, Set. 2018.</p>
 </li>
 <li>
+<p>Lee Phillips, <a href="https://www.admin-magazine.com/Archive/2019/50/Julia-Fast-as-Fortran-easy-as-Python">Julia: Fast as Fortran, easy as Python</a>, ADMIN Magazine, Issue 50, 2019.</p>
+</li>
+<li>
+<p>Toby Driscoll, <a href="https://tobydriscoll.net/blog/matlab-vs.-julia-vs.-python/">Matlab vs. Julia vs. Python</a>, artigo de opinião, Jun. 2019.</p>
+</li>
+<li>
+<p>Bekhruz Tuychiev, <a href="https://www.datacamp.com/blog/the-rise-of-julia-is-it-worth-learning-in-2022">The Rise of the Julia Programming Language  — Is it Worth Learning in 2023?</a>, artigo de opinião, DataCamp, Maio 2023.</p>
+</li>
+<li>
+<p>William F Godoy, <a href="https://bssw.io/blog_posts/julia-s-value-proposition-for-better-scientific-software">Julia’s Value Proposition for Better Scientific Software</a>, artigo de opinião, Better Scientific Software, Abril, 2023.</p>
+</li>
+<li>
+<p>João Pereira, Mario Siqueira, <a href="https://periodicos.ifpb.edu.br/index.php/principia/article/view/1345">Linguagem de programação JULIA: uma alternativa open source e de alto desempenho ao MATLAB</a>, Revista principia - divulgação científica e tecnológica do IFPB, N.º 34, p. 132-140, 2017.</p>
+</li>
+<li>
 <p>Abel Soares Siqueira, Gustavo Sarturi, João Okimoto, Kally Chung, <a href="https://juliaintro.github.io/JuliaIntroBR.jl/">Introdução à programação em Julia</a>, tradução do livro de: Allen Downey, Ben Lauwens, <a href="https://benlauwens.github.io/ThinkJulia.jl/latest/book.html">Think Julia: How to Think Like a Computer Scientist</a>, O’Reilly Media, 2018.</p>
 </li>
 <li>
-<p>João Marcello Pereira, Mario Benjamim Baptista de Siqueira, <a href="https://periodicos.ifpb.edu.br/index.php/principia/article/view/1345">Linguagem de programação JULIA: uma alternativa open source e de alto desempenho ao MATLAB</a>, Revista principia - divulgação científica e tecnológica do IFPB, N.º 34, p. 132-140, 2017.</p>
+<p>Raimundo Filho, Marina Miranda, Millena Rocha, André Nascimento, <a href="https://www.edufma.ufma.br/wp-content/uploads/woocommerce_uploads/2023/05/Introdu%C3%A7%C3%A3o-a-linguagem-de-programa%C3%A7%C3%A3o-Julia.pdf">Introdução a linguagem de programação Julia</a>,  EDFUMA - Editora da Universidade Federal do Maranhão, São Luís, Brasil, 2023.</p>
 </li>
 </ul>
 </main>
