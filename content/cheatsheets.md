@@ -24,9 +24,18 @@ Indicação da notação utilizada no *website* e nos *notebooks*.
 				
 - [MATLAB to Julia online converter](https://lakras.github.io/matlab-to-julia/)
 
+- [CodeConvert.AI - Convert code with a click of a button](https://www.codeconvert.ai/)
+
+- 🎈 Rémi Vezy, [Julia course: from total beginner to power user](https://vezy.github.io/julia_course/)
+
+
+### Julia Packages
+
 - [Julia Packages](https://juliapackages.com/packages?sort=stars)
 
-- 🎈 Rémi Vezy, [Julia course: from total beginner to power user](https://vezy.github.io/julia_course/) 
+- Lee Phillips, [Digging into Julia's package system](https://lwn.net/Articles/871490/), LWN.net, Oct. 2021.
+
+- Alejandra Ramirez, [Practical guide: how to contribute to open source Julia projects](https://github.com/MA-Ramirez/BlogPosts/blob/main/1_PracticalGuide.md), GitHub BlogPosts, Mar. 2023.
 
 
 ## Pluto.jl
@@ -38,6 +47,8 @@ Indicação da notação utilizada no *website* e nos *notebooks*.
     - [PlutoUI.jl documentation](https://docs.juliahub.com/PlutoUI/abXFp/0.7.52/)
     
     - [🎈 PlutoUI sample notebook](https://featured.plutojl.org/basic/plutoui.jl)
+ 
+    - Lee Phillips, [🎈 PlutoUI Demonstration​](https://pluton.lee-phillips.org/sliders/uiDemo.html), a live demonstration of PlutoUI controls, served with the [PlutoSliderServer](https://github.com/JuliaPluto/PlutoSliderServer.jl)
     
     - doggo dot jl, [How to Create Engaging Interactive Reactive Notebooks using PlutoUI](https://www.youtube.com/watch?v=nkyvN7PXQZc), YouTube, Oct. 2022. Duration: 24min.
  
@@ -71,6 +82,8 @@ Indicação da notação utilizada no *website* e nos *notebooks*.
 ### Gráficos, desenhos, diagramas, ...
 
 - [Plots.jl](https://github.com/sswatson/cheatsheets/blob/master/plotsjl-cheatsheet.pdf) cheatsheet
+
+- Christopher Rackauckas, [Summary of Julia Plotting Packages](http://www.stochasticlifestyle.com/summary-of-julia-plotting-packages/), Stochastic Lifestyle blog, Jun. 2023.
 
 - [🎈 Notebooks for the examples in the book](https://packtpublishing.github.io/Interactive-Visualization-and-Plotting-with-Julia/): Diego Javier Zea, Interactive Visualization and Plotting with Julia, Packt Publishing, 2022.  
 
