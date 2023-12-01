@@ -38,7 +38,7 @@ Assim, os *notebooks* reativos com Julia/Pluto podem fomentar a transparência, 
 
 
 ## "*Time to first plot*"
-Julia é uma linguagem compilada *just-in-time* (JIT). Isso significa que o compilador irá gerar código binário conforme necessário. Assim, quando abrir/executar o *notebook* pela primeira vez, verificará que tem de aguardar algum tempo pela compilação do código Julia, dependendo da complexidade do mesmo e da capacidade de processamento do seu computador. Por exemplo, a biblioteca `Plots.jl` para realização de gráficos tem uma dimensão considerável e exige tempo de compilação. Esta latência na compilação de um programa Julia é conhecida por ["time to first plot"](https://lwn.net/Articles/856819/), que teve melhorias significativas nas versões 1.6 e 1.9 do Julia. Após a 1ª execução, apenas as alterações que realize (no código, nos dados, por interação) serão compiladas, pelo que verificará, a partir daí o [elevado desempenho](https://julialang.org/benchmarks/) da linguagem Julia.
+Julia é uma linguagem compilada *just-in-time* (JIT). Isso significa que o compilador irá gerar código binário conforme necessário. Assim, quando abrir/executar o *notebook* pela primeira vez, verificará que tem de aguardar algum tempo pela compilação do código Julia, dependendo da complexidade do mesmo e da capacidade de processamento do seu computador. Por exemplo, a biblioteca `Plots.jl` para realização de gráficos tem uma dimensão considerável e exige tempo de compilação. Esta latência na compilação de um programa Julia é conhecida por ["**_time to first plot_**"], que teve melhorias significativas nas versões [1.6](https://lwn.net/Articles/856819/) e [1.9](https://lwn.net/Articles/933019/) do Julia. Após a 1ª execução, apenas as alterações que realize (no código, nos dados, por interação) serão compiladas, pelo que verificará, a partir daí o [elevado desempenho](https://julialang.org/benchmarks/) da linguagem Julia.
 
 Assim, como sugestão, após abrir um dos *notebooks* de Máquinas Elétricas II no seu Julia/Pluto, pode fazer uma primeira leitura desse *notebook* na versão estática do mesmo, disponibilizada neste *website*, até a 1ª compilação/execução terminar, para então depois poder utilizá-lo.
 
@@ -57,6 +57,8 @@ No final de cada *notebook* é indicado o tempo da 1ª compilação, acompanhado
 
 - Connor Burns, [A Guide to Building Reactive Notebooks for Scientific Computing With Julia and Pluto.jl](https://medium.com/swlh/a-guide-to-building-reactive-notebooks-for-scientific-computing-with-julia-and-pluto-jl-1a2c0c455d51), artigo de opinião, Medium, Dez. 2020.
 
+- Lee Phillips, [An introduction to Pluto]](https://lwn.net/Articles/835930/), artigo de opinião, LWN.net, Nov. 2020.
+
 
 ## Sobre a linguagem de programação Julia
 
@@ -64,9 +66,15 @@ No final de cada *notebook* é indicado o tempo da 1ª compilação, acompanhado
 
 - Gabriel Gauci Maistre, [10 Reasons Why You Should Learn Julia](https://blog.goodaudience.com/10-reasons-why-you-should-learn-julia-d786ac29c6ca), artigo de opinião, Good Audience, Set. 2018.
 
+- Lee Phillips, [Julia: Fast as Fortran, easy as Python](https://www.admin-magazine.com/Archive/2019/50/Julia-Fast-as-Fortran-easy-as-Python), ADMIN Magazine, Issue 50, 2019.
+
 - Bekhruz Tuychiev, [The Rise of the Julia Programming Language  — Is it Worth Learning in 2023?](https://www.datacamp.com/blog/the-rise-of-julia-is-it-worth-learning-in-2022), artigo de opinião, DataCamp, Maio 2023.
 
 - William F Godoy, [Julia's Value Proposition for Better Scientific Software](https://bssw.io/blog_posts/julia-s-value-proposition-for-better-scientific-software), artigo de opinião, Better Scientific Software, Abril, 2023.
+
+- Lee Phillips, [An introduction to the Julia language, part 1](https://lwn.net/Articles/763626/), LWN.net, Ago. 2018.
+
+- Lee Phillips, [An introduction to the Julia language, part 2](https://lwn.net/Articles/764001/), LWN.net, Set. 2018.
 
 - Abel Soares Siqueira, Gustavo Sarturi, João Okimoto, Kally Chung, [Introdução à programação em Julia](https://juliaintro.github.io/JuliaIntroBR.jl/), tradução do livro de: Allen Downey, Ben Lauwens, [Think Julia: How to Think Like a Computer Scientist](https://benlauwens.github.io/ThinkJulia.jl/latest/book.html), O’Reilly Media, 2018.
 
