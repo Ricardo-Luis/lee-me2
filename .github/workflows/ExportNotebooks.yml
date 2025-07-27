@@ -15,12 +15,12 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout Fall 23 source
-              uses: actions/checkout@v2
+              uses: actions/checkout@v4
 
             - name: 🙌 Install Julia
-              uses: julia-actions/setup-julia@v1
+              uses: julia-actions/setup-julia@v2
               with:
-                  version: "~1.10.0-0"
+                  version: "~1.11.6"
 
             - name: ⏱ Cache notebook states
               uses: actions/cache@v4
@@ -54,7 +54,7 @@ jobs:
             - name: 🔀 Combine semesters into single site
               run: |
                 mkdir www
-                mv PlutoPages/_site www/Fall23         # ALTERAR DEPENDENTE DO ANO
+                mv PlutoPages/_site www/Fall23         # ALTERAR DEPENDENTE DO ANO?
                 mv PlutoPages/extra_outputs/* www
 
             - name: 🚀 Deploy to GitHub Pages
